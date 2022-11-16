@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+
+{% block title_pagina  %}
+<title>Nueva Venta</title>
+{% endblock title_pagina  %}
+
+{% block mi_contenido %}
+
+<form action={% url 'nueva_venta' %} method="POST">
+    {% csrf_token %}
+<p></p>
+    <table>
+        {{form.media}}
+        {{form}} 
+    </table>
+<p></p>
+<button>Crear</button>
+</form>
+<p></p>
+{% endblock mi_contenido %}
